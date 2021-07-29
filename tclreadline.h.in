@@ -14,15 +14,9 @@
 #include <tcl.h>
 
 #define TCLRL_LIBRARY        "@TCLRL_DIR@"
-
-/* VERSION STRINGS */
 #define TCLRL_VERSION_STR    "@VERSION@"
 #define TCLRL_PATCHLEVEL_STR "@PATCHLEVEL_STR@"
 
-/* VERSION NUMBERS */
-#define TCLRL_MAJOR      @MAJOR@
-#define TCLRL_MINOR      @MINOR@
-#define TCLRL_PATCHLEVEL @PATCHLEVEL@
 
 #ifdef __cplusplus
 extern "C" {

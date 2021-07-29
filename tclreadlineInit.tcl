@@ -7,8 +7,6 @@
 # This software is copyright under the BSD license.
 # ---
 
-package provide tclreadline @VERSION@
-
 namespace eval tclreadline:: {
     namespace export Init
 }
@@ -16,17 +14,7 @@ namespace eval tclreadline:: {
 proc ::tclreadline::Init {} {
     uplevel #0 {
         if {![info exists tclreadline::library]} {
-            set msg ""
-            foreach dirname [list @TCLRL_LIBDIR@ [file dirname [info script]]] {
-                if {[catch {load [file join $dirname libtclreadline[info sharedlibextension]]} msg] == 0} {
-                    set msg ""
-                    break
-                }
-            }
-            if {$msg != ""} {
-                puts stderr $msg
-                exit 2
-            }
+            load [file join [file dirname [info script]] libtclreadline[info sharedlibextension]]
         }
     }
 }
